@@ -1,0 +1,35 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <h1>WITAM UŻYTKOWNIKU</h1>
+    Cześć {{userdata.login}}<br>
+
+    <h2>Lista książek</h2>
+    <ul>
+        {% for book in books %}
+        <li>{{ book[1] }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Dodaj książkę</h2>
+    <form method="post" action="/">
+        Tytuł książki: <input type="text" name="book_title" />
+        <input type="submit" value="Dodaj" />
+    </form>
+
+    {% if userdata.isadmin %}
+    <h2>Administrator</h2>
+    <a href="/add">Zarządzaj użytkownikami</a>
+    {% endif %}
+
+    <br>
+    <a href="/logout">Wyloguj</a>
+</body>
+
+</html><html>
+
+
+</html>
